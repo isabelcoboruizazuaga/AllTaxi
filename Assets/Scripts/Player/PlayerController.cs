@@ -60,12 +60,12 @@ public class PlayerController : MonoBehaviour
             IsWalking = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) )
         {
             sprint = 1.5f;
             anim.SetFloat("sprint", sprint);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift)||!IsWalking)
         {
             sprint = 1f;
             anim.SetFloat("sprint", sprint);

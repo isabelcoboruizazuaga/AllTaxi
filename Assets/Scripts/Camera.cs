@@ -5,13 +5,11 @@ public class Cameras : MonoBehaviour
     public Camera camera1, camera2, camera3;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         camera1.enabled = false;
         camera2.enabled = false;
-        camera3.enabled = false;
-
-        ActivateCamera();
+        camera3.enabled = false;       
     }
 
     public void ActivateCamera()
