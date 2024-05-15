@@ -6,13 +6,15 @@ public class GameManager : MonoBehaviour
     private GameObject player;
 
     public static GameObject currentVehicle;
-
-
+    public static int money = 0;
+    public static GameObject currentTaxiBeacon;
 
     [SerializeField] private GameObject beacon;
     [SerializeField] private GameObject beacon2;
 
-    private RandomPointGenerator randomPointGenerator = new RandomPointGenerator(265,225,-23,-23); //z -23, 225 y -23 265
+
+
+    private RandomPointGenerator randomPointGenerator = new RandomPointGenerator(265, 225, -23, -23); //z -23, 225 y -23 265
 
     /*
         * Apareces: Generación destino aleatorio
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
     public void NextDestination()
     {
         Vector3 beaconPoint = randomPointGenerator.GetTaxiPoint();
-        Instantiate(beacon, beaconPoint, Quaternion.identity);
+        currentTaxiBeacon = Instantiate(beacon, beaconPoint, Quaternion.identity);
     }
 
     private void DeactivateVehicles()
