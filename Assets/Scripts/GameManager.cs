@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static int money = 0;
 
     [SerializeField] private GameObject beacon;
-    [SerializeField] private GameObject beacon2;
+    [SerializeField] private GameObject beaconHelicopter;
     [SerializeField] private GameObject textHelicopter;
 
     [SerializeField] private GameObject textMoneyObject;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             beaconPoint = randomPointGenerator.GetHelicopterPoint();
             if (beaconPoint != Vector3.zero)
             {
-                currentHelicopterBeacon = Instantiate(beacon, beaconPoint, Quaternion.identity);
+                currentHelicopterBeacon = Instantiate(beaconHelicopter, beaconPoint, Quaternion.identity);
 
                 textHelicopter.SetActive(true);
 
@@ -109,6 +109,11 @@ public class GameManager : MonoBehaviour
     public static void SetControllerStatus(GameObject gotoActivate, bool status)
     {
         gotoActivate.GetComponent<Cameras>().ControlCameras(status);
+
+        if (status) { gotoActivate.GetComponentInChildren<AudioSource>().Play(); } else
+        {
+            gotoActivate.GetComponentInChildren<AudioSource>().Stop();
+        }
 
         //Activate or deactivate camera controller
         gotoActivate.GetComponent<Cameras>().enabled = status;
