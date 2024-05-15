@@ -12,12 +12,24 @@ public class Cameras : MonoBehaviour
         camera3.enabled = false;       
     }
 
-    public void ActivateCamera()
+    public void ControlCameras(bool activate)
+    {
+        if(activate) { ActivateCamera(); }
+        else { DeactivateCameras(); }
+    }
+
+
+    private void ActivateCamera()
     {
         camera1.enabled = true;
         camera2.enabled = false;
         camera3.enabled = false;
-
+    }
+    private void DeactivateCameras()
+    {
+        camera1.enabled = false;
+        camera2.enabled = false;
+        camera3.enabled = false;
     }
 
     // Update is called once per frame
