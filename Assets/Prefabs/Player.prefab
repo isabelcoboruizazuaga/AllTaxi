@@ -841,6 +841,9 @@ MonoBehaviour:
   camera1: {fileID: 2620683935717865423}
   camera2: {fileID: 7080538572894467222}
   camera3: {fileID: 8300211941707257093}
+  audioL1: {fileID: 4713324535313478268}
+  audioL2: {fileID: 99677255145216090}
+  audioL3: {fileID: 418956755445678078}
 --- !u!1 &3875891831529731391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,6 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bceb01e32fdd0694f95b7006c8056de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  directionArrow: {fileID: 0}
 --- !u!1 &7750483973646176058
 GameObject:
   m_ObjectHideFlags: 0

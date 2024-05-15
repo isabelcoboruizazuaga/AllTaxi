@@ -1,20 +1,25 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private RandomPointGenerator randomPointGenerator = new RandomPointGenerator(265, 225, -23, -23); //z -23, 225 y -23 265
     private GameObject[] vehicles;
     private GameObject player;
 
     public static GameObject currentVehicle;
-    public static int money = 0;
     public static GameObject currentTaxiBeacon;
+    public static GameObject currentHelicopterBeacon;
+    public static int money = 0;
 
     [SerializeField] private GameObject beacon;
     [SerializeField] private GameObject beacon2;
+    [SerializeField] private GameObject textHelicopter;
+
+    [SerializeField] private GameObject textMoneyObject;
+    private static TextMeshProUGUI textMoney;
 
 
-
-    private RandomPointGenerator randomPointGenerator = new RandomPointGenerator(265, 225, -23, -23); //z -23, 225 y -23 265
 
     /*
         * Apareces: Generación destino aleatorio
@@ -36,6 +41,7 @@ public class GameManager : MonoBehaviour
 
         //Deactivate controlls
         DeactivateVehicles();
+        textHelicopter.SetActive(false);
 
         //GFind player and activate its controlls
         player = GameObject.FindGameObjectWithTag("Player");
@@ -43,12 +49,41 @@ public class GameManager : MonoBehaviour
 
         //Generates first destiny point
         NextDestination();
+
+        textMoney = textMoneyObject.GetComponent<TextMeshProUGUI>();
     }
 
     public void NextDestination()
     {
         Vector3 beaconPoint = randomPointGenerator.GetTaxiPoint();
         currentTaxiBeacon = Instantiate(beacon, beaconPoint, Quaternion.identity);
+
+        if(currentHelicopterBeacon ==null)
+        {
+            beaconPoint = randomPointGenerator.GetHelicopterPoint();
+            if (beaconPoint != Vector3.zero)
+            {
+                currentHelicopterBeacon = Instantiate(beacon, beaconPoint, Quaternion.identity);
+
+                textHelicopter.SetActive(true);
+
+            }
+        }
+
+    }
+
+    public void CleanHelicopterBeacon()
+    {
+        currentHelicopterBeacon = null;
+    }
+
+    public void DeactivateHelicopterText()
+    {
+        textHelicopter.SetActive(false);
+    }
+    public static void UpdateMoney()
+    {
+        textMoney.text = "Money earned: " + money + "$";
     }
 
     private void DeactivateVehicles()
@@ -98,16 +133,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Getting out a vehicle
-        if (Input.GetKeyDown(KeyCode.F))
+        if (currentVehicle != null)
         {
-            player.SetActive(true);
+            //Getting out a vehicle
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                player.SetActive(true);
 
-            //The player is placed on the player spawn
-            player.transform.position = currentVehicle.transform.GetChild(0).gameObject.transform.position;
-            player.transform.rotation = currentVehicle.transform.GetChild(0).gameObject.transform.rotation;
+                //The player is placed on the player spawn
+                player.transform.position = currentVehicle.transform.GetChild(0).gameObject.transform.position;
+                player.transform.rotation = currentVehicle.transform.GetChild(0).gameObject.transform.rotation;
 
-            SetControllerStatus(currentVehicle, false);
+                SetControllerStatus(currentVehicle, false);
+                currentVehicle = null;
+            }
         }
     }
+
 }

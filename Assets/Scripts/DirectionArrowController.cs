@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DirectionArrowController : MonoBehaviour
 {
+    [SerializeField] private bool helicopterPointer = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +14,21 @@ public class DirectionArrowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.currentTaxiBeacon != null)
+        if (!helicopterPointer)
         {
-            transform.LookAt(GameManager.currentTaxiBeacon.transform);
+            if (GameManager.currentTaxiBeacon != null)
+            {
+                transform.LookAt(GameManager.currentTaxiBeacon.transform);
+            }
         }
+        else
+        {
+            if (GameManager.currentHelicopterBeacon != null)
+            {
+                transform.LookAt(GameManager.currentHelicopterBeacon.transform);
+            }
+
+        }
+       
     }
 }

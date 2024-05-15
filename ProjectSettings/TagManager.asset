@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Vehicle
   - Beacon
+  - BeaconHelicopter
   layers:
   - Default
   - TransparentFX

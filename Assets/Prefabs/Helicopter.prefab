@@ -668,8 +668,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera1: {fileID: 500808128019010535}
-  camera2: {fileID: 223296083545063290}
-  camera3: {fileID: 1606837408731110051}
+  camera2: {fileID: 1606837408731110051}
+  camera3: {fileID: 223296083545063290}
+  audioL1: {fileID: 3565394448514278100}
+  audioL2: {fileID: 5733799239972544798}
+  audioL3: {fileID: 670613779886387758}
 --- !u!195 &5301109891714177193
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -753,6 +756,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7310219010449426049}
     m_Modifications:
+    - target: {fileID: 3735673522344027066, guid: 95bf7b4b1a9c5d74f804e596936e6d31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 620cac16e1a8e3d4b8675f2983da18cf, type: 2}
+    - target: {fileID: 5259062956964746595, guid: 95bf7b4b1a9c5d74f804e596936e6d31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 620cac16e1a8e3d4b8675f2983da18cf, type: 2}
     - target: {fileID: 6827857354304434220, guid: 95bf7b4b1a9c5d74f804e596936e6d31, type: 3}
       propertyPath: m_Name
       value: DirectionArrow

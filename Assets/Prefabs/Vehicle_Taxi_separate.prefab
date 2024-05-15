@@ -158,6 +158,9 @@ MonoBehaviour:
   camera1: {fileID: 7709496269531763196}
   camera2: {fileID: 2542363843792511711}
   camera3: {fileID: 3619740509688531422}
+  audioL1: {fileID: 1313387426029940536}
+  audioL2: {fileID: 4160429827571732823}
+  audioL3: {fileID: 2592569463664393797}
 --- !u!1 &363365844361236178
 GameObject:
   m_ObjectHideFlags: 0

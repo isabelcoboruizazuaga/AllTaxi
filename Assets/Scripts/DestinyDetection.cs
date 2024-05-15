@@ -28,8 +28,23 @@ public class DestinyDetection : MonoBehaviour
         {
             gameManager.NextDestination();
             Destroy(other.gameObject);
+
             GameManager.money+=20;
+            GameManager.UpdateMoney();
         }
+        else
+        {
+            if (other.gameObject.CompareTag("BeaconHelicopter"))
+            {
+                gameManager.DeactivateHelicopterText();
+                gameManager.CleanHelicopterBeacon();
+                Destroy(other.gameObject); 
+
+                GameManager.money += 40;
+                GameManager.UpdateMoney();
+            }
+        }
+       
 
     }
 }

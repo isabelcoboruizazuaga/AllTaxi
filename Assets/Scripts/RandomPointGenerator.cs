@@ -5,8 +5,6 @@ public class RandomPointGenerator
 {
     float maxX, minX;
     private float maxZ, minZ;
-    private float maxY, minY;
-    private float helicopterMisionAparitionRate = 0.2f;
 
 
     private int areaMask = (1 << 0) + (0 << 1) + (1 << 2) + (1 << 3) + (1 << 4); //all areaMask except not walkable
@@ -18,45 +16,6 @@ public class RandomPointGenerator
         this.minX = minX;
         this.minZ = minZ;
     }
-
-    // Start is called before the first frame update
-    /*void Start()
-    {
-        /*    (1 << 0) + (0 << 1) + (1 << 2) + (1 << 3) + (1 << 4)
-    = 1 + 0 + 4 + 8 + 16
-    = 29
-
-        Layer 0 : "Walkable" => 1
-        Layer 1 : "Not walkable" => 0
-        Layer 2 : "Jump" => 1
-        Layer 3 : "Road" => 1
-        Layer 4 : "Helicopter" => 1
-
-        for(int i = 0; i < 100; i++)
-        {
-
-
-            SetHelicopterPoint();
-        }for(int i = 0; i < 100; i++)
-        {
-
-
-            SetTaxiPoint();
-        }
-    }
-
-    void Update()
-    {
-        /*Vector3 point;
-        if (RandomPosition(out point, areaMask, 10))
-        {
-            Instantiate(beacon, point, Quaternion.identity);
-        }
-
-
-
-    }
-*/
     public Vector3 GetTaxiPoint()
     {
         Vector3 point = Vector3.zero;
@@ -73,12 +32,14 @@ public class RandomPointGenerator
     public Vector3 GetHelicopterPoint()
     {
         Vector3 point = Vector3.zero;
-        if (RandomPosition(out point, areaMask, 35))
-        {
 
+        if (RandomPosition(out point, areaMask, 30))
+        {
             return point;
-            //Instantiate(beacon2, point, Quaternion.identity);
         }
+
+        Debug.Log("Helicopter Generation failed");
+
         return point;
     }
 
@@ -106,23 +67,4 @@ public class RandomPointGenerator
         return false;
     }
 
-    private float range = 50f;
-    /*bool RandomPoint(Vector3 center, float range, out Vector3 result, int areamask)
-    {
-        for (int i = 0; i < 30; i++)
-        {
-            //Generates a random point inside of a 100 meters area
-            Vector3 randomPoint = center + Random.insideUnitSphere * range;
-
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, areamask))
-            {
-                result = hit.position;
-                return true;
-            }
-        }
-        result = Vector3.zero;
-        return false;
-    }
-*/
 }
