@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject textMoneyObject;
     private static TextMeshProUGUI textMoney;
 
-    private float totalTime = 90;
+    private float totalTime = 300;
 
 
     /*

@@ -259,9 +259,9 @@ MonoBehaviour:
   rearLeftCollider: {fileID: 8551790305230673873}
   rearRightMesh: {fileID: 635167594770656183}
   rearRightCollider: {fileID: 7261711183153417544}
-  maxSpeed: 90
-  maxReverseSpeed: 45
-  accelerationMultiplier: 2
+  maxSpeed: 300
+  maxReverseSpeed: 100
+  accelerationMultiplier: 5
   maxSteeringAngle: 27
   steeringSpeed: 0.5
   brakeForce: 350
