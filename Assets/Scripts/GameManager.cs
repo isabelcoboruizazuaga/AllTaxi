@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject beacon;
     [SerializeField] private GameObject beaconHelicopter;
     [SerializeField] private GameObject textHelicopter;
+    [SerializeField] private TextMeshProUGUI textTime;
 
     [SerializeField] private GameObject textMoneyObject;
     private static TextMeshProUGUI textMoney;
 
+    private float totalTime = 90;
 
 
     /*
@@ -53,12 +56,53 @@ public class GameManager : MonoBehaviour
         textMoney = textMoneyObject.GetComponent<TextMeshProUGUI>();
     }
 
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (currentVehicle != null)
+        {
+            //Getting out a vehicle
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                player.SetActive(true);
+
+                //The player is placed on the player spawn
+                player.transform.position = currentVehicle.transform.GetChild(0).gameObject.transform.position;
+                player.transform.rotation = currentVehicle.transform.GetChild(0).gameObject.transform.rotation;
+
+                SetControllerStatus(currentVehicle, false);
+                currentVehicle = null;
+            }
+        }
+
+        if (totalTime > 0)
+        {
+            // Subtract elapsed time every frame
+            totalTime -= Time.deltaTime;
+
+            // Divide the time by 60
+            float minutes = Mathf.FloorToInt(totalTime / 60);
+
+            // Returns the remainder
+            float seconds = Mathf.FloorToInt(totalTime % 60);
+
+            // Set the text string            
+            textTime.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+        else
+        {
+            totalTime = 0;
+            SceneManager.LoadScene("MenuScene");
+        }
+    }
+
     public void NextDestination()
     {
         Vector3 beaconPoint = randomPointGenerator.GetTaxiPoint();
         currentTaxiBeacon = Instantiate(beacon, beaconPoint, Quaternion.identity);
 
-        if(currentHelicopterBeacon ==null)
+        if (currentHelicopterBeacon == null)
         {
             beaconPoint = randomPointGenerator.GetHelicopterPoint();
             if (beaconPoint != Vector3.zero)
@@ -110,7 +154,8 @@ public class GameManager : MonoBehaviour
     {
         gotoActivate.GetComponent<Cameras>().ControlCameras(status);
 
-        if (status) { gotoActivate.GetComponentInChildren<AudioSource>().Play(); } else
+        if (status) { gotoActivate.GetComponentInChildren<AudioSource>().Play(); }
+        else
         {
             gotoActivate.GetComponentInChildren<AudioSource>().Stop();
         }
@@ -130,27 +175,6 @@ public class GameManager : MonoBehaviour
             if (gotoActivate.GetComponent<HelicopterController>() != null)
             {
                 gotoActivate.GetComponent<HelicopterController>().enabled = status;
-            }
-        }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (currentVehicle != null)
-        {
-            //Getting out a vehicle
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                player.SetActive(true);
-
-                //The player is placed on the player spawn
-                player.transform.position = currentVehicle.transform.GetChild(0).gameObject.transform.position;
-                player.transform.rotation = currentVehicle.transform.GetChild(0).gameObject.transform.rotation;
-
-                SetControllerStatus(currentVehicle, false);
-                currentVehicle = null;
             }
         }
     }
