@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
                 //The player is placed on the player spawn
                 player.transform.position = currentVehicle.transform.GetChild(0).gameObject.transform.position;
-                player.transform.rotation = currentVehicle.transform.GetChild(0).gameObject.transform.rotation;
+                player.transform.rotation =Quaternion.identity;
 
                 SetControllerStatus(currentVehicle, false);
                 currentVehicle = null;

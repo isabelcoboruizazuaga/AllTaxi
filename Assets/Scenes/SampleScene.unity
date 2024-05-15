@@ -19833,8 +19833,12 @@ PrefabInstance:
       value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: m_Mass
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Constraints
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313387426029940536, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -19890,7 +19894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: maxSpeed
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -19899,6 +19903,18 @@ PrefabInstance:
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: useSounds
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: steeringSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: maxSteeringAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: accelerationMultiplier
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4160429827571732823, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51131,8 +51147,12 @@ PrefabInstance:
       value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: m_Mass
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Constraints
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313387426029940536, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51188,7 +51208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: maxSpeed
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51197,6 +51217,18 @@ PrefabInstance:
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: useSounds
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: steeringSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: maxSteeringAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: accelerationMultiplier
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4160429827571732823, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51825,8 +51857,12 @@ PrefabInstance:
       value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: m_Mass
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Constraints
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313387426029940536, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51882,7 +51918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: maxSpeed
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -51891,6 +51927,18 @@ PrefabInstance:
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: useSounds
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: steeringSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: maxSteeringAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: accelerationMultiplier
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4160429827571732823, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -62778,8 +62826,12 @@ PrefabInstance:
       value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: m_Mass
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 668592254195412253, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Constraints
-      value: 64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313387426029940536, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -62835,7 +62887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: maxSpeed
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled
@@ -62844,6 +62896,18 @@ PrefabInstance:
     - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: useSounds
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: steeringSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: maxSteeringAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205705907908032990, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
+      propertyPath: accelerationMultiplier
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4160429827571732823, guid: 2d49aa5dc0abe8b4889a373e63f2a8a5, type: 3}
       propertyPath: m_Enabled

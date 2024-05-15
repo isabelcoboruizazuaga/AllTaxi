@@ -21,8 +21,8 @@ public class CarControllerTest : MonoBehaviour
 
     //SPEED CONFIG
     [Header("SPEED CONFIG")]
-    public int maxSpeed = 100;
-    public int maxReverseSpeed = 45; 
+    public int maxSpeed = 300;
+    public int maxReverseSpeed = 100; 
     public int accelerationMultiplier = 2; 
     public int maxSteeringAngle = 27; 
     public float steeringSpeed = 0.5f; 
